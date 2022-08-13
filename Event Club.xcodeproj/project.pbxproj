@@ -14,6 +14,8 @@
 		D0474AF828A7BCB400C1FB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0474AF728A7BCB400C1FB3C /* Assets.xcassets */; };
 		D0474AFB28A7BCB400C1FB3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0474AF928A7BCB400C1FB3C /* LaunchScreen.storyboard */; };
 		D0474B0328A7C98600C1FB3C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B0228A7C98600C1FB3C /* AppCoordinator.swift */; };
+		D0474B0528A7E9D900C1FB3C /* EventListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B0428A7E9D900C1FB3C /* EventListCoordinator.swift */; };
+		D0474B0728A7EB3C00C1FB3C /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B0628A7EB3C00C1FB3C /* EventListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		D0474AFA28A7BCB400C1FB3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0474AFC28A7BCB400C1FB3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0474B0228A7C98600C1FB3C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D0474B0428A7E9D900C1FB3C /* EventListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCoordinator.swift; sourceTree = "<group>"; };
+		D0474B0628A7EB3C00C1FB3C /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				D0474AF028A7BCAA00C1FB3C /* SceneDelegate.swift */,
 				D0474AF228A7BCAA00C1FB3C /* ViewController.swift */,
 				D0474B0228A7C98600C1FB3C /* AppCoordinator.swift */,
+				D0474B0428A7E9D900C1FB3C /* EventListCoordinator.swift */,
+				D0474B0628A7EB3C00C1FB3C /* EventListViewController.swift */,
 				D0474AF428A7BCAA00C1FB3C /* Main.storyboard */,
 				D0474AF728A7BCB400C1FB3C /* Assets.xcassets */,
 				D0474AF928A7BCB400C1FB3C /* LaunchScreen.storyboard */,
@@ -142,9 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0474B0328A7C98600C1FB3C /* AppCoordinator.swift in Sources */,
+				D0474B0728A7EB3C00C1FB3C /* EventListViewController.swift in Sources */,
 				D0474AF328A7BCAA00C1FB3C /* ViewController.swift in Sources */,
 				D0474AEF28A7BCAA00C1FB3C /* AppDelegate.swift in Sources */,
 				D0474AF128A7BCAA00C1FB3C /* SceneDelegate.swift in Sources */,
+				D0474B0528A7E9D900C1FB3C /* EventListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
