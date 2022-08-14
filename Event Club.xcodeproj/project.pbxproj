@@ -16,6 +16,7 @@
 		D0474B0728A7EB3C00C1FB3C /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B0628A7EB3C00C1FB3C /* EventListViewController.swift */; };
 		D0474B0928A7F16400C1FB3C /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B0828A7F16300C1FB3C /* UIColor+Extention.swift */; };
 		D0474B1228A9027300C1FB3C /* Event Club.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0474B1028A9027300C1FB3C /* Event Club.xcdatamodeld */; };
+		D0474B1428A9039900C1FB3C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B1328A9039900C1FB3C /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D0474B0628A7EB3C00C1FB3C /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		D0474B0828A7F16300C1FB3C /* UIColor+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extention.swift"; sourceTree = "<group>"; };
 		D0474B1128A9027300C1FB3C /* Event Club.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Event Club.xcdatamodel"; sourceTree = "<group>"; };
+		D0474B1328A9039900C1FB3C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				D0474AEE28A7BCAA00C1FB3C /* AppDelegate.swift */,
 				D0474AF028A7BCAA00C1FB3C /* SceneDelegate.swift */,
 				D0474B1028A9027300C1FB3C /* Event Club.xcdatamodeld */,
+				D0474B1328A9039900C1FB3C /* CoreDataManager.swift */,
 				D0474B0B28A9014500C1FB3C /* Coordinators */,
 				D0474B0C28A9015800C1FB3C /* Controllers */,
 				D0474B0A28A9013100C1FB3C /* Extentions */,
@@ -176,6 +179,7 @@
 				D0474AEF28A7BCAA00C1FB3C /* AppDelegate.swift in Sources */,
 				D0474AF128A7BCAA00C1FB3C /* SceneDelegate.swift in Sources */,
 				D0474B0528A7E9D900C1FB3C /* EventListCoordinator.swift in Sources */,
+				D0474B1428A9039900C1FB3C /* CoreDataManager.swift in Sources */,
 				D0474B0928A7F16400C1FB3C /* UIColor+Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
