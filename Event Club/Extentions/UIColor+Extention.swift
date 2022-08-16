@@ -13,8 +13,11 @@ extension UIColor {
         return #colorLiteral(red: 0.9595094323, green: 0.9520195127, blue: 0.9149230123, alpha: 1)
     }
     
-    static func plusButtonColor() -> UIColor {
-        return #colorLiteral(red: 0.005163254682, green: 0.2825021148, blue: 1, alpha: 1)
+    static func buttonBlueColor() -> UIColor {
+        return #colorLiteral(red: 0.3058823529, green: 0.462745098, blue: 0.6705882353, alpha: 1)
+    }
+    
+    static func buttonGreenColor() -> UIColor {
+        return #colorLiteral(red: 0, green: 0.7139277458, blue: 0.47553581, alpha: 1)
     }
 }
-
