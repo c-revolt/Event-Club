@@ -9,7 +9,7 @@ import UIKit
 
 final class EventListCoordinator: Coordinator {
     
-    private(set) var childCoordinator: [Coordinator] = []
+    private(set) var childCoordinators: [Coordinator] = []
     private var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -27,8 +27,17 @@ final class EventListCoordinator: Coordinator {
     
     func startAddEvent() {
         let addEventCoordinator = AddEventCoordinator(navigationController: navigationController)
-        childCoordinator.append(addEventCoordinator)
+        addEventCoordinator.parentCoordinator = self
+        childCoordinators.append(addEventCoordinator)
         addEventCoordinator.start()
+    }
+    
+    func childDidFinished(_ childCoordinator: Coordinator) {
+        if let index = childCoordinators.firstIndex(where: { coordinator -> Bool in
+            return childCoordinator === coordinator
+        }) {
+            childCoordinators.remove(at: index)
+        }
     }
 }
 

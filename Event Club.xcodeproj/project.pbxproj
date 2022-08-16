@@ -76,8 +76,7 @@
 				D0474AF028A7BCAA00C1FB3C /* SceneDelegate.swift */,
 				D0474B1028A9027300C1FB3C /* Event Club.xcdatamodeld */,
 				D0474B1328A9039900C1FB3C /* CoreDataManager.swift */,
-				D0474B1728ABB5D900C1FB3C /* EventListViewModel.swift */,
-				D0474B1D28ABED5600C1FB3C /* AddEventViewModel.swift */,
+				D0474B1F28ABF50000C1FB3C /* ViewModels */,
 				D0474B0B28A9014500C1FB3C /* Coordinators */,
 				D0474B0C28A9015800C1FB3C /* Controllers */,
 				D0474B0A28A9013100C1FB3C /* Extentions */,
@@ -113,6 +112,15 @@
 				D0474B1B28ABEC0100C1FB3C /* AddEventViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D0474B1F28ABF50000C1FB3C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D0474B1728ABB5D900C1FB3C /* EventListViewModel.swift */,
+				D0474B1D28ABED5600C1FB3C /* AddEventViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

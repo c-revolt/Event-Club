@@ -15,4 +15,5 @@ final class EventListViewModel {
     func tappedAddEvent() {
         coordinator?.startAddEvent()
     }
+    
 }

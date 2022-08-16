@@ -16,4 +16,15 @@ class AddEventViewController: UIViewController {
         
         view.backgroundColor = .mainThemeColor()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        viewModel.viewDidDisappear()
+    }
+    
+    deinit {
+        print("deinit from add event controller")
+    }
+    
 }
