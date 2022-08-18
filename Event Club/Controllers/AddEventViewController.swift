@@ -75,7 +75,7 @@ class AddEventViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200)
         ])
     }
     
