@@ -45,4 +45,14 @@ final class AddEventViewModel {
         print("tapped done")
         // save in core data
     }
+    
+    func updateCell(indexPath: IndexPath, subtitle: String) {
+        
+        switch cells[indexPath.row] {
+        case .titleSubtitle(let titleSubtitleViewModel):
+            titleSubtitleViewModel.update(subtitle)
+        case .titleImage:
+            break
+        }
+    }
 }

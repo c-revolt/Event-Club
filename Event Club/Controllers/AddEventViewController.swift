@@ -17,7 +17,8 @@ class AddEventViewController: UIViewController {
         
         view.backgroundColor = .mainThemeColor()
         
-        setupTableView()
+        setupViews()
+        setupHierarchy()
         applyConstraints()
         
         viewModel.onUpdate = { [weak self] in
@@ -26,15 +27,8 @@ class AddEventViewController: UIViewController {
         
         viewModel.viewDidLoad()
         
-        setupNavigationBar()
-        
     }
-    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//        tableView.frame = view.bounds
-//    }
+
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -42,9 +36,18 @@ class AddEventViewController: UIViewController {
         viewModel.viewDidDisappear()
         
     }
-    
-    private func setupNavigationBar() {
         
+    private func setupViews() {
+        
+        // tableView
+        tableView.dataSource = self
+        tableView.backgroundColor = .white
+        tableView.layer.cornerRadius = 12
+        tableView.tableFooterView = UIView()
+    
+        tableView.register(TitleSubtitleCell.self, forCellReuseIdentifier: "TitleSubtitleCell")
+        
+        // navigationBar
         navigationController?.navigationBar.barTintColor = .mainThemeColor()
         navigationItem.title = viewModel.title
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
@@ -59,16 +62,9 @@ class AddEventViewController: UIViewController {
         tableView.setContentOffset(.init(x: 0, y: -2), animated: false)
     }
     
-    private func setupTableView() {
-    
+    private func setupHierarchy() {
+        
         view.addSubview(tableView)
-        tableView.dataSource = self
-        tableView.backgroundColor = .white
-        tableView.layer.cornerRadius = 12
-        
-        tableView.register(TitleSubtitleCell.self, forCellReuseIdentifier: "TitleSubtitleCell")
-        
-        
     }
     
     private func applyConstraints() {
@@ -90,6 +86,7 @@ class AddEventViewController: UIViewController {
     
 }
 
+// MARK: - DataSource
 extension AddEventViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,6 +107,7 @@ extension AddEventViewController: UITableViewDataSource {
             }
             
             cell.update(with: titleSubtitleCellViewModel)
+            cell.subtitleTextField.delegate = self
             return cell
             
         case .titleImage:
@@ -117,5 +115,18 @@ extension AddEventViewController: UITableViewDataSource {
         }
     }
     
-    
+}
+
+// MARK: - TextFieldDelegate
+extension AddEventViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let currentText = textField.text else { return false }
+        let text = currentText + string
+        
+        let point = textField.convert(textField.bounds.origin, to: tableView)
+        if let indexPath = tableView.indexPathForRow(at: point) {
+            viewModel.updateCell(indexPath: indexPath, subtitle: text)
+        }
+        return true
+    }
 }
