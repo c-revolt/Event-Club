@@ -23,6 +23,8 @@ final class TitleSubtitleCell: UITableViewCell {
         
     }()
     
+    private let photoImageView = UIImageView()
+    
     private var viewModel: TitleSubtitleCellViewModel?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -47,16 +49,22 @@ final class TitleSubtitleCell: UITableViewCell {
         
         subtitleTextField.inputView = viewModel.type == .text ? nil : datePickerView
         subtitleTextField.inputAccessoryView = viewModel.type == .text ? nil : toolBar
+        
+        photoImageView.isHidden = viewModel.type != .image
+        subtitleTextField.isHidden = viewModel.type == .image
     }
     
     private func setupViews() {
         stackView.axis = .vertical
+        stackView.spacing = 15
         
-        titleLabel.font = .systemFont(ofSize: 22, weight: .medium)
+        titleLabel.font = .systemFont(ofSize: 20, weight: .medium)
         titleLabel.textAlignment = .left
+        titleLabel.textColor = .lightGray
         
-        subtitleTextField.font = .systemFont(ofSize: 20, weight: .medium)
+        subtitleTextField.font = .systemFont(ofSize: 17, weight: .medium)
         subtitleTextField.textAlignment = .left
+        
         
         [stackView, titleLabel, subtitleTextField].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -65,21 +73,28 @@ final class TitleSubtitleCell: UITableViewCell {
         toolBar.setItems([doneButton], animated: false)
         datePickerView.preferredDatePickerStyle = .wheels
         datePickerView.datePickerMode = .date
+        
+        photoImageView.backgroundColor = .black.withAlphaComponent(0.4)
+        photoImageView.layer.cornerRadius = 12
     }
     
     private func setupHierarchy() {
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(subtitleTextField)
+        stackView.addArrangedSubview(photoImageView)
     }
     
     private func applyConstraints() {
+        
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: leftConstant),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -leftConstant)
         ])
+        
+        photoImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
     @objc private func tappedDone() {

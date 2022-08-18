@@ -33,9 +33,9 @@ final class AddEventViewModel {
                                                       onCellUpdate: { [weak self] in
                                                           self?.onUpdate()
                                                       })),
-            .titleSubtitle(TitleSubtitleCellViewModel(title: "Date",
+            .titleSubtitle(TitleSubtitleCellViewModel(title: "Background",
                                                       subtitle: "",
-                                                      placeholder: "Select a date",
+                                                      placeholder: "",
                                                       type: .image,
                                                       onCellUpdate: { [weak self] in
                                                           self?.onUpdate()
