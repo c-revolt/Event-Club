@@ -52,6 +52,9 @@ final class TitleSubtitleCell: UITableViewCell {
         
         photoImageView.isHidden = viewModel.type != .image
         subtitleTextField.isHidden = viewModel.type == .image
+        
+        photoImageView.image = viewModel.image
+        
     }
     
     private func setupViews() {

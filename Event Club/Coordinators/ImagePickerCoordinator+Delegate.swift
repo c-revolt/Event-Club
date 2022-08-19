@@ -15,6 +15,8 @@ extension ImagePickerCoordinator: UIImagePickerControllerDelegate {
         if let image = info[.originalImage] as? UIImage {
             parentCoordinator?.didFinishPicking(image)
         }
+        
+        parentCoordinator?.childDidFinished(self)
     }
 }
 

@@ -78,7 +78,7 @@ final class AddEventViewModel {
             }
             
             coordinator?.showImagePicker { image in
-                
+                titleSubtitleCellViewModel.update(image)
             }
         }
     }
