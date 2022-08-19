@@ -9,7 +9,7 @@ import UIKit
 
 final class AddEventViewModel {
     
-    let title = "Add"
+    let title = "Add 🎉"
     var onUpdate: () -> Void = {}
     
     enum Cell {
@@ -67,6 +67,17 @@ final class AddEventViewModel {
         switch cells[indexPath.row] {
         case .titleSubtitle(let titleSubtitleViewModel):
             titleSubtitleViewModel.update(subtitle)
+        }
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        switch cells[indexPath.row] {
+        case .titleSubtitle(let titleSubtitleCellViewModel):
+            guard titleSubtitleCellViewModel.type == .image else {
+                return
+            }
+            
+            coordinator?.showImagePicker()
         }
     }
 }

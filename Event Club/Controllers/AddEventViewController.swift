@@ -41,6 +41,7 @@ class AddEventViewController: UIViewController {
         
         // tableView
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.backgroundColor = .white
         tableView.layer.cornerRadius = 12
         tableView.tableFooterView = UIView()
@@ -75,7 +76,8 @@ class AddEventViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200)
+           // tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200)
+            tableView.heightAnchor.constraint(equalToConstant: 415)
         ])
     }
     
@@ -113,6 +115,13 @@ extension AddEventViewController: UITableViewDataSource {
         }
     }
     
+}
+
+// MARK: - Delegate
+extension AddEventViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRow(at: indexPath)
+    }
 }
 
 // MARK: - TextFieldDelegate
