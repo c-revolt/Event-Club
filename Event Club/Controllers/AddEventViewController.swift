@@ -44,6 +44,7 @@ class AddEventViewController: UIViewController {
         tableView.delegate = self
         tableView.backgroundColor = .white
         tableView.layer.cornerRadius = 12
+        tableView.separatorColor = .clear
         tableView.tableFooterView = UIView()
     
         tableView.register(TitleSubtitleCell.self, forCellReuseIdentifier: "TitleSubtitleCell")
@@ -121,6 +122,8 @@ extension AddEventViewController: UITableViewDataSource {
 extension AddEventViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectRow(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
 }
 

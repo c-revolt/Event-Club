@@ -77,7 +77,9 @@ final class AddEventViewModel {
                 return
             }
             
-            coordinator?.showImagePicker()
+            coordinator?.showImagePicker { image in
+                
+            }
         }
     }
 }
