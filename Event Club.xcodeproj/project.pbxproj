@@ -25,6 +25,7 @@
 		D0474B2428AE029200C1FB3C /* TitleSubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B2328AE029200C1FB3C /* TitleSubtitleCell.swift */; };
 		D0474B4A28AFF86C00C1FB3C /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B4928AFF86B00C1FB3C /* ImagePickerCoordinator.swift */; };
 		D0474B4C28AFF9B100C1FB3C /* ImagePickerCoordinator+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B4B28AFF9B100C1FB3C /* ImagePickerCoordinator+Delegate.swift */; };
+		D0474B4E28B2542F00C1FB3C /* EventCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B4D28B2542F00C1FB3C /* EventCellBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D0474B2328AE029200C1FB3C /* TitleSubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleCell.swift; sourceTree = "<group>"; };
 		D0474B4928AFF86B00C1FB3C /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
 		D0474B4B28AFF9B100C1FB3C /* ImagePickerCoordinator+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagePickerCoordinator+Delegate.swift"; sourceTree = "<group>"; };
+		D0474B4D28B2542F00C1FB3C /* EventCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				D0474AF028A7BCAA00C1FB3C /* SceneDelegate.swift */,
 				D0474B1028A9027300C1FB3C /* Event Club.xcdatamodeld */,
 				D0474B1328A9039900C1FB3C /* CoreDataManager.swift */,
+				D0474B4D28B2542F00C1FB3C /* EventCellBuilder.swift */,
 				D0474B0B28A9014500C1FB3C /* Coordinators */,
 				D0474B2228AD2CF100C1FB3C /* Views */,
 				D0474B1F28ABF50000C1FB3C /* ViewModels */,
@@ -226,6 +229,7 @@
 				D0474B0528A7E9D900C1FB3C /* EventListCoordinator.swift in Sources */,
 				D0474B4C28AFF9B100C1FB3C /* ImagePickerCoordinator+Delegate.swift in Sources */,
 				D0474B1428A9039900C1FB3C /* CoreDataManager.swift in Sources */,
+				D0474B4E28B2542F00C1FB3C /* EventCellBuilder.swift in Sources */,
 				D0474B0928A7F16400C1FB3C /* UIColor+Extention.swift in Sources */,
 				D0474B2128AD2CB900C1FB3C /* TitleSubtitleCellViewModel.swift in Sources */,
 				D0474B4A28AFF86C00C1FB3C /* ImagePickerCoordinator.swift in Sources */,
