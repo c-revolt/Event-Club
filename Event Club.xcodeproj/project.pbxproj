@@ -27,6 +27,8 @@
 		D0474B4C28AFF9B100C1FB3C /* ImagePickerCoordinator+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B4B28AFF9B100C1FB3C /* ImagePickerCoordinator+Delegate.swift */; };
 		D0474B4E28B2542F00C1FB3C /* EventCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0474B4D28B2542F00C1FB3C /* EventCellBuilder.swift */; };
 		D0A37C0728BB3D30009C653D /* EventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A37C0628BB3D30009C653D /* EventCellViewModel.swift */; };
+		D0A37C0928BB3F49009C653D /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A37C0828BB3F49009C653D /* EventCell.swift */; };
+		D0A37C0B28BB4315009C653D /* UIView + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A37C0A28BB4315009C653D /* UIView + Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		D0474B4B28AFF9B100C1FB3C /* ImagePickerCoordinator+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagePickerCoordinator+Delegate.swift"; sourceTree = "<group>"; };
 		D0474B4D28B2542F00C1FB3C /* EventCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellBuilder.swift; sourceTree = "<group>"; };
 		D0A37C0628BB3D30009C653D /* EventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellViewModel.swift; sourceTree = "<group>"; };
+		D0A37C0828BB3F49009C653D /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		D0A37C0A28BB4315009C653D /* UIView + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				D0474B0828A7F16300C1FB3C /* UIColor+Extention.swift */,
+				D0A37C0A28BB4315009C653D /* UIView + Extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				D0474B2328AE029200C1FB3C /* TitleSubtitleCell.swift */,
+				D0A37C0828BB3F49009C653D /* EventCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +233,7 @@
 				D0474AEF28A7BCAA00C1FB3C /* AppDelegate.swift in Sources */,
 				D0474B1E28ABED5600C1FB3C /* AddEventViewModel.swift in Sources */,
 				D0474B1A28ABB81300C1FB3C /* AddEventCoordinator.swift in Sources */,
+				D0A37C0928BB3F49009C653D /* EventCell.swift in Sources */,
 				D0474AF128A7BCAA00C1FB3C /* SceneDelegate.swift in Sources */,
 				D0474B1C28ABEC0100C1FB3C /* AddEventViewController.swift in Sources */,
 				D0474B0528A7E9D900C1FB3C /* EventListCoordinator.swift in Sources */,
@@ -235,6 +242,7 @@
 				D0A37C0728BB3D30009C653D /* EventCellViewModel.swift in Sources */,
 				D0474B4E28B2542F00C1FB3C /* EventCellBuilder.swift in Sources */,
 				D0474B0928A7F16400C1FB3C /* UIColor+Extention.swift in Sources */,
+				D0A37C0B28BB4315009C653D /* UIView + Extention.swift in Sources */,
 				D0474B2128AD2CB900C1FB3C /* TitleSubtitleCellViewModel.swift in Sources */,
 				D0474B4A28AFF86C00C1FB3C /* ImagePickerCoordinator.swift in Sources */,
 			);

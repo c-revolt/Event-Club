@@ -10,6 +10,7 @@ import UIKit
 class EventListViewController: UIViewController {
     
     var viewModel: EventListViewModel!
+    let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,8 @@ class EventListViewController: UIViewController {
         setupNavigationBar()
         
     }
+    
+    
     
     private func setupNavigationBar() {
         
