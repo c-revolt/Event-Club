@@ -29,6 +29,7 @@
 		D0A37C0728BB3D30009C653D /* EventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A37C0628BB3D30009C653D /* EventCellViewModel.swift */; };
 		D0A37C0928BB3F49009C653D /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A37C0828BB3F49009C653D /* EventCell.swift */; };
 		D0A37C0B28BB4315009C653D /* UIView + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A37C0A28BB4315009C653D /* UIView + Extention.swift */; };
+		D0A37C0D28BB4D5F009C653D /* EventListViewController + DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A37C0C28BB4D5F009C653D /* EventListViewController + DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		D0A37C0628BB3D30009C653D /* EventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellViewModel.swift; sourceTree = "<group>"; };
 		D0A37C0828BB3F49009C653D /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		D0A37C0A28BB4315009C653D /* UIView + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extention.swift"; sourceTree = "<group>"; };
+		D0A37C0C28BB4D5F009C653D /* EventListViewController + DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventListViewController + DataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				D0474B0628A7EB3C00C1FB3C /* EventListViewController.swift */,
+				D0A37C0C28BB4D5F009C653D /* EventListViewController + DataSource.swift */,
 				D0474B1B28ABEC0100C1FB3C /* AddEventViewController.swift */,
 			);
 			path = Controllers;
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0474B2428AE029200C1FB3C /* TitleSubtitleCell.swift in Sources */,
+				D0A37C0D28BB4D5F009C653D /* EventListViewController + DataSource.swift in Sources */,
 				D0474B0328A7C98600C1FB3C /* AppCoordinator.swift in Sources */,
 				D0474B1228A9027300C1FB3C /* Event Club.xcdatamodeld in Sources */,
 				D0474B0728A7EB3C00C1FB3C /* EventListViewController.swift in Sources */,

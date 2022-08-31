@@ -17,8 +17,23 @@ class EventListViewController: UIViewController {
         
         view.backgroundColor = .mainThemeColor()
         
+        setupViews()
         setupNavigationBar()
         
+        
+        viewModel.onUpdate = { [weak self] in
+            self?.tableView.reloadData()
+        }
+        
+        viewModel.viewDidLoad()
+        
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        tableView.frame = view.bounds
     }
     
     
@@ -35,6 +50,14 @@ class EventListViewController: UIViewController {
         navigationItem.title = viewModel.title
         
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    private func setupViews() {
+        view.addSubview(tableView)
+        tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.reusedID)
+        tableView.dataSource = self
+        
+        
     }
     
     @objc private func tappedAddEventButton() {
