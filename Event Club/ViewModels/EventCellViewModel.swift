@@ -9,20 +9,11 @@ import UIKit
 
 struct EventCellViewModel {
     
-    var yearText: String {
-        "1 year"
-    }
+    let date = Date()
     
-    var monthText: String {
-        "2 month"
-    }
-    
-    var weekText: String {
-        "2 weeks"
-    }
-    
-    var dayText: String {
-        "2 days"
+    var timeRemainingStrings: [String] {
+        guard let eventDate = event.date else { return [] }
+        return date.timeRemaining(until: eventDate)?.components(separatedBy: ",") ?? []
     }
     
     var dateText: String {
@@ -35,5 +26,11 @@ struct EventCellViewModel {
     
     var backgroundImage: UIImage {
         #imageLiteral(resourceName: "testImage")
+    }
+    
+    private let event: Event
+    
+    init(_ event: Event) {
+        self.event = event
     }
 }
