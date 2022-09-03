@@ -57,6 +57,7 @@ class EventListViewController: UIViewController {
         tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.reusedID)
         tableView.dataSource = self
         tableView.backgroundColor = .mainThemeColor()
+        tableView.separatorColor = .clear
         
     }
     

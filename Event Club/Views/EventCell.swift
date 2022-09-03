@@ -12,12 +12,7 @@ final class EventCell: UITableViewCell {
     static let reusedID = "EventCell"
     
     private let timeRemainingLabels = [UILabel(), UILabel(), UILabel(), UILabel()]
-//    private let yearLabel = UILabel()
-//    private let monthLabel = UILabel()
-//    private let weekLabel = UILabel()
-//    private let daysLabel = UILabel()
     private let dateLabel = UILabel()
-    
     private let eventNameLabel = UILabel()
     private let backgroundImageView = UIImageView()
     private let verticalStackView = UIStackView()
@@ -25,6 +20,7 @@ final class EventCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        contentView.backgroundColor = .mainThemeColor()
         setupViews()
         setupHierarchy()
         applyConstraints()
@@ -53,6 +49,9 @@ final class EventCell: UITableViewCell {
         
         verticalStackView.axis = .vertical
         verticalStackView.alignment = .trailing
+        
+        backgroundImageView.layer.cornerRadius = 12
+        backgroundImageView.clipsToBounds = true
     }
     
     private func setupHierarchy() {
@@ -71,29 +70,28 @@ final class EventCell: UITableViewCell {
     private func applyConstraints() {
         
         
-        let bottomConstraint = backgroundImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        let bottomConstraint = backgroundImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
         bottomConstraint.priority = .required - 1
         bottomConstraint.isActive = true
         
         NSLayoutConstraint.activate([
-            backgroundImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            backgroundImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            backgroundImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            //backgroundImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            backgroundImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            backgroundImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            backgroundImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             backgroundImageView.heightAnchor.constraint(equalToConstant: 250)
 
         ])
         
         NSLayoutConstraint.activate([
-            eventNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
-            eventNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15)
+            eventNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -25),
+            eventNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25)
         ])
         
         
         NSLayoutConstraint.activate([
-            verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            verticalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
-            verticalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
+            verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 25),
+            verticalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25),
+            verticalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -25)
         ])
         
     }
