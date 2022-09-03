@@ -10,22 +10,46 @@ import UIKit
 struct EventCellViewModel {
     
     let date = Date()
+    private static let imageCache = NSCache<NSString, UIImage>()
+    private let imageQueue = DispatchQueue(label: "imageDispatch", qos: .background)
+    
+    private var cacheKey: String {
+        event.objectID.description
+    }
     
     var timeRemainingStrings: [String] {
         guard let eventDate = event.date else { return [] }
         return date.timeRemaining(until: eventDate)?.components(separatedBy: ",") ?? []
     }
     
-    var dateText: String {
-        "25 Mar 2020"
+    var dateText: String? {
+        guard let eventDate = event.date else { return nil }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyy"
+        return dateFormatter.string(from: eventDate)
     }
     
-    var eventName: String {
-        "Barbados"
+    var eventName: String? {
+        event.name
     }
     
-    var backgroundImage: UIImage {
-        #imageLiteral(resourceName: "testImage")
+    func loadImage(complition: @escaping(UIImage?) -> Void) {
+        if let image = Self.imageCache.object(forKey: cacheKey as NSString) {
+            complition(image)
+        } else {
+            imageQueue.async {
+                
+                guard let imageData = self.event.image,
+                      let image = UIImage(data: imageData) else {
+                    complition(nil)
+                    return
+                }
+                Self.imageCache.setObject(image, forKey: self.cacheKey as NSString)
+                DispatchQueue.main.async {
+                    complition(image)
+                }
+            }
+        }
     }
     
     private let event: Event
