@@ -14,6 +14,36 @@ final class EventDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .white
+        
+        viewModel.onUpdate = { [weak self] in
+            self?.backgroundImageView.image = self?.viewModel.image
+        }
+        
+        viewModel.viewDidLoad()
+        
+        setupHierarchy()
+        applyConstraints()
+    }
+    
+    private func setupHierarchy() {
+        view.addSubview(backgroundImageView)
+    }
+    
+    private func applyConstraints() {
+        
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+        
+            backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        
     }
     
 }
