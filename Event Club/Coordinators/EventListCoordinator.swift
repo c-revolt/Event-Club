@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 final class EventListCoordinator: Coordinator {
     
@@ -25,6 +26,13 @@ final class EventListCoordinator: Coordinator {
         onSaveEvent = eventListViewModel.reload
         eventListViewController.viewModel = eventListViewModel
         navigationController.setViewControllers([eventListViewController], animated: false)
+    }
+    
+    func onSelect(_ id: NSManagedObjectID) {
+        let eventDetailCoordinator = EventDetailCoordinator(navigationController: navigationController)
+        childCoordinators.append(eventDetailCoordinator)
+        eventDetailCoordinator.start()
+        
     }
     
     func startAddEvent() {
