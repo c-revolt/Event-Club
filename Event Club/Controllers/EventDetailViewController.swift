@@ -23,8 +23,13 @@ final class EventDetailViewController: UIViewController {
         
         viewModel.viewDidLoad()
         
+        setupView()
         setupHierarchy()
         applyConstraints()
+    }
+    
+    private func setupView() {
+        backgroundImageView.contentMode = .scaleAspectFill
     }
     
     private func setupHierarchy() {
