@@ -14,7 +14,7 @@ final class TimeRemainingViewModel {
         case detail
     }
     
-    private let timeRemainingParts: [String]
+    let timeRemainingParts: [String]
     private let mode: Mode
     
     var fontSize: CGFloat {

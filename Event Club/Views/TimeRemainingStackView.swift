@@ -17,9 +17,23 @@ final class TimeRemainingStackView: UIStackView {
         }
         
         axis = .vertical
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     func upadate(with viewModel: TimeRemainingViewModel) {
         
+        timeRemainingLabels.forEach {
+            $0.text = ""
+            $0.font = .systemFont(ofSize: viewModel.fontSize, weight: .medium)
+            $0.textColor = .white
+        }
+        
+        viewModel.timeRemainingParts.enumerated().forEach {
+            timeRemainingLabels[$0.offset].text = $0.element
+        }
+        
+     
+        
+        alignment = viewModel.alignment
     }
 }

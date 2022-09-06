@@ -11,6 +11,7 @@ final class EventDetailViewController: UIViewController {
     
     private let backgroundImageView = UIImageView()
     var viewModel: EventDetailViewModel!
+    private let timeRemainingStackView = TimeRemainingStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,10 @@ final class EventDetailViewController: UIViewController {
         view.backgroundColor = .white
         
         viewModel.onUpdate = { [weak self] in
-            self?.backgroundImageView.image = self?.viewModel.image
+            guard let self = self,
+                  let timeRemainingViewModel = self.viewModel.timeRemainingViewModel else { return }
+            self.backgroundImageView.image = self.viewModel.image
+            self.timeRemainingStackView.upadate(with: timeRemainingViewModel)
         }
         
         viewModel.viewDidLoad()
@@ -28,12 +32,20 @@ final class EventDetailViewController: UIViewController {
         applyConstraints()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        viewModel.viewDidDisappear()
+    }
+    
     private func setupView() {
         backgroundImageView.contentMode = .scaleAspectFill
+        timeRemainingStackView.setup()
     }
     
     private func setupHierarchy() {
         view.addSubview(backgroundImageView)
+        view.addSubview(timeRemainingStackView)
     }
     
     private func applyConstraints() {
@@ -46,6 +58,14 @@ final class EventDetailViewController: UIViewController {
             backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        timeRemainingStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            timeRemainingStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timeRemainingStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
         
