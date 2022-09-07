@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AddEventViewModel {
+final class AddEditEventViewModel {
     
     let title = "Add  🎉"
     var onUpdate: () -> Void = {}
@@ -16,7 +16,7 @@ final class AddEventViewModel {
         case titleSubtitle(TitleSubtitleCellViewModel)
     }
     
-    private(set) var cells: [AddEventViewModel.Cell] = []
+    private(set) var cells: [AddEditEventViewModel.Cell] = []
     weak var coordinator: AddEventCoordinator?
     
     private var nameCellViewModel: TitleSubtitleCellViewModel?
@@ -88,7 +88,7 @@ final class AddEventViewModel {
     }
 }
 
-private extension AddEventViewModel {
+private extension AddEditEventViewModel {
     
     func setupCells() {
         

@@ -45,4 +45,9 @@ final class EventDetailViewModel {
         coordinator?.didFinish()
     }
     
+    func editButtonTapped() {
+        guard let event = event else { return }
+        
+    }
+    
 }

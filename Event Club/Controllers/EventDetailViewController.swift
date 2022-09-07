@@ -30,6 +30,8 @@ final class EventDetailViewController: UIViewController {
         setupView()
         setupHierarchy()
         applyConstraints()
+        
+        navigationItem.rightBarButtonItem = .init(image: UIImage(systemName: "pencil"), style: .plain, target: self, action: #selector(viewModel.editButtonTapped))
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -32,4 +32,8 @@ final class EventDetailCoordinator: Coordinator {
     func didFinish() {
         parentCoordinator?.childDidFinished(self)
     }
+    
+    func onEditEvent(event: Event) {
+        
+    }
 }
